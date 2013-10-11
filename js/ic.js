@@ -271,10 +271,37 @@ var J3MViewer = function(j3m_path, media_path) {
                 });
             } else if (typeof item =='object') {
             	var date = moment(Number(item.timestamp));
-                $("#" + name + "List").append(
-                	$(document.createElement('div'))
-                		.html(id + ": " + item.value + " at " + date.format("HH:mm:ss"))
-                );
+            	
+            	if(name != "UserData") {
+					$("#" + name + "List").append(
+						$(document.createElement('div'))
+							.html(id + ": " + item.value + " at " + date.format("HH:mm:ss"))
+					);
+				} else {
+					var parsedData = [];
+					$.each(item.associatedForms, function(idx, form) {
+						$.each(Object.keys(form.answerData), function(idx_, key) {
+							
+							parsedData.push($(document.createElement('p'))
+								.append(
+									$(document.createElement('span'))
+										.addClass('ic_label')
+										.html(key + ": ")
+								)
+								.append(
+									$(document.createElement('span'))
+										.html(form.answerData[key])
+								)
+							);
+						});
+					});
+										
+					$.each(parsedData, function(idx, pd) {
+						console.info(pd);
+						$("#" + name + "List").append(pd);
+					});
+					
+				}
             } else {
                 $("#" + name + "List").append(
                 	$(document.createElement('div')).html(id + ": " + item)
@@ -441,7 +468,7 @@ var J3MViewer = function(j3m_path, media_path) {
 
 			if (j3m.data.userAppendedData) {
 				console.info(j3m.data.userAppendedData);
-				j3m_viewer.addList("User Data", j3m.data.userAppendedData);
+				j3m_viewer.addList("UserData", j3m.data.userAppendedData);
 			}
 	
 			var timestamp = 0;
