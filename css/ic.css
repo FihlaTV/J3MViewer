@@ -99,6 +99,7 @@ p {
 #ic_content a {
 	color:#000;
 	cursor:pointer;
+	text-decoration:underline;
 }
 
 #ic_content a:hover, #ic_logo a:hover, #ic_navigation a:hover {
@@ -135,6 +136,23 @@ p {
     font-size:0.5em;
 }
 
+.fullscreen_viewer {
+	position:fixed;
+	top:0;
+	margin:20px;
+	z-index:1001;
+	background-color:#000;
+}
+
+.fullscreen_viewer img {
+	width:93%;
+	padding:20px;
+}
+
 .recent_submissions_holder {
 	display:none;
+}
+
+.row-fluid {
+	clear:both;
 }

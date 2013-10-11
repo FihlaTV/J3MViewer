@@ -186,6 +186,23 @@ function renderData(route, params) {
 	}
 }
 
+function showFullscreen(media_path) {
+	var fs = $(document.createElement('div'))
+		.addClass('fullscreen_viewer')
+		.append(
+			$(document.createElement('a'))
+				.html('[ x ]')
+				.css('color','#ffffff')
+				.click(function() {
+					fs.remove();
+				})
+		)
+		.append(
+			$(document.createElement('img')).prop('src', media_path)
+		);
+	$("#ic_content").append(fs);
+}
+
 var J3MViewer = function(j3m_path, media_path) {
 	var cloudmadeApiKey = '23c00ae936704081ab019253c36a55b3';
 	
@@ -369,6 +386,7 @@ var J3MViewer = function(j3m_path, media_path) {
 				datas2[datas2.length] = item.value;
 		});
 
+		console.info(arraySensorData3);
 		$.each(arraySensorData3,function(id, item){
 				datas3[datas3.length] = item.value;
 		});
@@ -400,7 +418,7 @@ var J3MViewer = function(j3m_path, media_path) {
 
 			]
 		};
-  		var newChart = new Chart(ctx).Line(data);
+  		var newCart = new Chart(ctx).Line(data);
 	}
 	
 	this.parse = function() {

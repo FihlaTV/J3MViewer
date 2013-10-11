@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row-fluid">
-
-		<div class="span12">  
+		<div class="span12"> 
+			<img src="/media/{{ _id }}/thumb_{{ file_name }}" style="float:right;" />
 			<h1 id="content_title"></h1>
 		</div>
 	</div>
@@ -12,6 +12,7 @@
 			<div id="img-mask" class="span12" style="height:400px;overflow:hidden;">
 				<div id="map"></div>
 			</div>
+			<a onclick=showFullscreen("/media/{{ _id }}/high_{{ file_name }}");>View Fullsize Image</a> | <a href="">Download J3M</a>
 		</div><!--/span-->
 	</div><!--/row-->
 </div>
