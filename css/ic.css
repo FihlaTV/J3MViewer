@@ -1,0 +1,140 @@
+body {
+	font-size:26px;
+	margin:0;
+	padding:0;
+	font-family:arial;
+}
+
+#ic_logo {
+	background-color:#000;
+	height:80px;
+	padding:20px 0 0 10px;
+}
+
+#registration {
+	z-index:2;
+	position:absolute;
+	top:inherit;
+	background-color:#fff;
+	width:256px;
+	height:356px;
+	padding:10px;
+	border:1px solid #999;
+	text-align:center;
+	display:none;
+	font-size:0.7em;
+}
+
+#load_registration {
+	border:none;
+	display:none;
+}
+
+#ic_navigation {
+	position:absolute;
+	top:0px;
+	left:200px;
+	padding:20px 0 0 0;
+}
+
+#recent_submissions {
+	margin:10px;
+}
+
+#map {
+	height: 400px;
+}
+
+#search_submissions {
+    clear: left;
+    display: block;
+    margin: 200px 10px 10px 10px;
+    position: absolute;
+}
+
+/**** lists and navigation ****/
+#ic_navigation ul, .submission_thumb_rollover ul, #sources_holder {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+#sources_holder li {
+	margin:0 0 40px 10px;
+	clear:left;
+}
+
+#ic_navigation ul li {
+	float:left;
+	margin:0 10px;
+}
+
+#submissions_holder div {
+	width:140px;
+	height:140px;
+}
+
+#submissions_holder div img {
+	width:100%;
+	height:100%;
+}
+
+/**** type ****/
+h1 {
+	font-size:1.2em;
+	font-weight:normal;
+}
+
+p {
+	font-size:0.7em;
+}
+
+#ic_logo a, #ic_navigation a {
+	text-decoration:none;
+	color:#fff;
+	cursor:pointer;
+	font-size:1.2em;
+}
+
+#ic_content a {
+	color:#000;
+	cursor:pointer;
+}
+
+#ic_content a:hover, #ic_logo a:hover, #ic_navigation a:hover {
+	color:#ff097c;
+}
+
+.ic_label {
+	color:#09bdff;
+	font-weight:bold;
+}
+
+#recent_submissions a {
+	color:#000;
+	font-size:0.7em;
+}
+
+/**** template elements ****/
+.submission_thumb_holder {
+	margin:10px;
+	padding:4px;
+	border:1px solid #ccc;
+	float:left;
+	position:relative;
+}
+
+.submission_thumb_rollover {
+	display:none;
+	background-color: #FFFFFF;
+    padding: 10px;
+    position: absolute;
+    width: 125px;
+    z-index: 1;
+    border:1px solid #000;
+    font-size:0.5em;
+}
+
+.recent_submissions_holder {
+	display:none;
+}

@@ -1,0 +1,16 @@
+<li>
+	<div class="source_holder">
+		<p>
+			<span class="ic_label translatable">Alias:</span> <span>{{ alias }}</span>
+		</p>
+		<p>
+			<span class="ic_label translatable">Device Fingerprint:</span> <span>{{ fingerprint }}</span>
+		</p>
+		<p>
+			<span class="ic_label translatable" style="margin-top:10px;">Submissions so far:</span> <span>{{ num_submissions }}</span> <a class="translatable" onclick="toggleElement('#recent_submissions_{{ _id }}',['View recent submissions','Hide'], this);renderData('search', { q: 'sourceID={{ _id }}', t: 'list_submissions_item', r: '#recent_submissions_{{ _id }}'});">View recent submissions</a>
+		</p> 
+	
+		<div class="recent_submissions_holder" id="recent_submissions_{{ _id }}" style="padding:10px;"></div>
+			
+	</div>
+</li>

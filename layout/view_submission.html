@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+
+		<div class="span12">  
+			<h1 id="content_title"></h1>
+		</div>
+	</div>
+
+	<div class="row-fluid" id="main-row">
+  
+		<div class="span12">
+			<div id="img-mask" class="span12" style="height:400px;overflow:hidden;">
+				<div id="map"></div>
+			</div>
+		</div><!--/span-->
+	</div><!--/row-->
+</div>
+
+<script>
+	j3m_viewer = new J3MViewer("/media/{{ _id }}/{{ j3m }}", "/media/{{ file_name }}");
+	j3m_viewer.parse();
+</script>

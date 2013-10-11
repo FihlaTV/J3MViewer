@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>InformaCam Dashboard{{ title }}</title>
+		<link rel="stylesheet" type="text/css" href="/css/ic.css" />
+		<link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+		<script type="text/javascript" src="/js/jquery.js"></script>
+		<script type="text/javascript" src="/js/underscore-min.js"></script>
+		<script type="text/javascript" src="/js/backbone-min.js"></script>
+		<script type="text/javascript" src="/js/qrcode.js"></script>
+		<script type="text/javascript" src="/js/jquery.qrcode.js"></script>
+		<script type="text/javascript" src="/js/mustache.js"></script>
+		<script type="text/javascript" src="/js/moment.min.js"></script>
+		<script type="text/javascript" src="/js/chart.js"></script>
+		<script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+		<script type="text/javascript" src="/js/ic.js"></script>
+	</head>
+	
+	<body class="{{ route }}">
+		<div id="ic_logo"><a href="/">InformaCam &gt;</a></div>
+		<div id="ic_navigation">
+			<ul>
+				<li>
+					<a onclick="toggleElement('#registration');">Register</a>
+					<div id="registration">
+						<a onclick="toggleElement('#registration');">[x]</a><br />
+						<a onclick="getRegistration();">Download (int-bar.ictd)</a>
+						<div id="qr_code" style="width:200px;height:200px;margin-top:15px;" ></div><br />
+						<iframe id="load_registration"></iframe>
+					</div>
+				</li>
+				<li><a href="/submissions/">Submissions</a></li>
+				<li><a href="/sources/">Sources</a></li>
+			</ul>
+		</div>
+		
+		<div id="ic_content"></div>
+	</body>
+</html>
