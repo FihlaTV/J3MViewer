@@ -377,16 +377,16 @@ var J3MViewer = function(j3m_path, media_path) {
 				labels[labels.length] = date.format("HH:mm:ss");
 			} else {
 				labels[labels.length] = "";
-				datas1[datas1.length] = item.value;
-				isEven = !isEven;
 			}
+			
+			datas1[datas1.length] = item.value;
+			isEven = !isEven;
 		});
 
 		$.each(arraySensorData2,function(id, item){
 				datas2[datas2.length] = item.value;
 		});
 
-		console.info(arraySensorData3);
 		$.each(arraySensorData3,function(id, item){
 				datas3[datas3.length] = item.value;
 		});
@@ -418,7 +418,8 @@ var J3MViewer = function(j3m_path, media_path) {
 
 			]
 		};
-  		var newCart = new Chart(ctx).Line(data);
+		console.info(data);
+  		var newChart = new Chart(ctx).Line(data);
 	}
 	
 	this.parse = function() {
