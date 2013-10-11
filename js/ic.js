@@ -329,7 +329,21 @@ var J3MViewer = function(j3m_path, media_path) {
 		arraySensorData2.sort(function(a,b){return a.timestamp-b.timestamp});
 		arraySensorData3.sort(function(a,b){return a.timestamp-b.timestamp});
 
-		$("#main-row").append('<div class="row-fluid"><div class="span12"><h3>' + name + '</h3><p><canvas id="' + name + 'Chart" height="300" width="1200"></canvas></p></div></div>');
+		var inner_span = $(document.createElement('div'))
+			.addClass('span12')
+			.append($(document.createElement('h3')).html(name))
+			.append($(document.createElement('canvas'))
+				.attr('id', name + "Chart")
+				.prop({
+					'height' : 300,
+					'width' : 1200
+				})
+			);
+		$("#main-row").append(
+			$(document.createElement('div'))
+				.addClass('row-fluid')
+				.append(inner_span)
+		);
 		
 		var ctx = $("#" + name + "Chart").get(0).getContext("2d");
 		var myNewChart = new Chart(ctx);
