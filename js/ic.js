@@ -239,6 +239,7 @@ var J3MViewer = function(j3m_path, media_path) {
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 		}).addTo(map);
 		var marker = L.marker([lat,lon]).addTo(map);
+		map.setZoom(16);
 	}
 	
 	this.addMapPoint = function(lat,lon) {
@@ -297,7 +298,6 @@ var J3MViewer = function(j3m_path, media_path) {
 					});
 										
 					$.each(parsedData, function(idx, pd) {
-						console.info(pd);
 						$("#" + name + "List").append(pd);
 					});
 					
