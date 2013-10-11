@@ -212,7 +212,6 @@ var J3MViewer = function(j3m_path, media_path) {
 	this.media_path = media_path;
 	
 	this.loadMedia = function() {
-		console.info(this.media_path);
 		$("#img-main").attr("src", this.media_path);
 	}
 	
@@ -418,7 +417,7 @@ var J3MViewer = function(j3m_path, media_path) {
 
 			]
 		};
-		console.info(data);
+
   		var newChart = new Chart(ctx).Line(data);
 	}
 	
@@ -441,6 +440,7 @@ var J3MViewer = function(j3m_path, media_path) {
 			j3m_viewer.addList("Genealogy",j3m.genealogy);
 
 			if (j3m.data.userAppendedData) {
+				console.info(j3m.data.userAppendedData);
 				j3m_viewer.addList("User Data", j3m.data.userAppendedData);
 			}
 	
@@ -509,22 +509,28 @@ var J3MViewer = function(j3m_path, media_path) {
 				j3m_viewer.sensorData["acc_z"]
 			);
 
+			
 			j3m_viewer.sensorData["bluetoothDeviceName"].sort(function(a,b){
 				return a.timestamp-b.timestamp
 			});
+			
 			j3m_viewer.addList(
 				"bluetoothDeviceName", j3m_viewer.sensorData["bluetoothDeviceName"]
 			);
+			
+			if(j3m_viewer.sensorData["cellTowerId"] != undefined) {
+				j3m_viewer.addList(
+					"cellTowerId",j3m_viewer.sensorData["cellTowerId"]
+				);
+			}
+			
+			if(j3m_viewer.sensorData["ssid"] != undefined) {
+				j3m_viewer.sensorData["ssid"].sort(function(a,b){
+					return a.timestamp-b.timestamp
+				});
 
-			j3m_viewer.addList(
-				"cellTowerId",j3m_viewer.sensorData["cellTowerId"]
-			);
-
-			j3m_viewer.sensorData["ssid"].sort(function(a,b){
-				return a.timestamp-b.timestamp
-			});
-
-			j3m_viewer.addList("ssid", j3m_viewer.sensorData["ssid"]);
+				j3m_viewer.addList("ssid", j3m_viewer.sensorData["ssid"]);
+			}
 
   		});
 	}
